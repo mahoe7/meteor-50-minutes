@@ -6,12 +6,17 @@
 </body>
 
 <template name="tasks">
+  {{> loginButtons}}
   <h1>Add Task</h1>
+  {{#if currentUser}}
     <form class="add-task">
       <label>Task Name</label>
      <input type="text" name="name" placeholder="Add Task"/>
       <input type="submit" value="Submit"/>
    </form>
+  {{else}}
+    <p>Please login to add tasks.</p>
+  {{/if}}
   <hr>
   <h3>Tasks</h3>
 
